@@ -36,7 +36,7 @@ namespace SOmobile {
         }
         return ret
     }
-    //% block='use %app% how default menssage app'
+    //% block='use %app% how default message app'
     export function MSGDefaultApp(app: MSGApp) {
         
     }
