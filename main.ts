@@ -59,7 +59,7 @@ namespace SOmobile {
     export function WifiForce(force: number) {
         radio.setGroup(force)
     }
-    //% block='get app number %position%(start in 0)'
+    //% block='get app number %position% (start in 0)'
     export function getApp(position: number){
         return apps[position]
     }
