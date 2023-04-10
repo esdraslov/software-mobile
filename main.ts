@@ -16,6 +16,12 @@ namespace SOmobile {
         //% block='iphone'
         Iphone
     }
+    export enum MSGApp {
+        //% block='MicroMSG(only android)'
+        MicroMSG,
+        //% block='MensagePho(only iphone)'
+        MensagePho
+    }
     //% block='import software %os%'
     export function exportSO(so: OSV){
         sfw = so.toString()
@@ -23,5 +29,9 @@ namespace SOmobile {
     //% block='software'
     export function software(){
         return sfw
+    }
+    //% block='use %app% how default menssage app'
+    export function MSGDefaultApp(app: MSGApp) {
+        
     }
 }
