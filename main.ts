@@ -16,6 +16,7 @@ namespace SOmobile {
         //% block='iphone'
         Iphone
     }
+    //% block='import software %os%'
     export function exportSO(so: OSV){
         sfw = so
     }
