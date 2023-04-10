@@ -1,5 +1,5 @@
 namespace SOmobile {
-    let sfw: string
+    let sfw: number
     export enum OSV {
         //% block='android 5'
         AndroidFive,
@@ -24,11 +24,17 @@ namespace SOmobile {
     }
     //% block='import software %os%'
     export function exportSO(so: OSV){
-        sfw = so.toString()
+        sfw = so
     }
     //% block='software'
     export function software(){
-        return sfw
+        let ret: string
+        if(sfw < 6){
+            ret = 'android'
+        }else{
+            ret = 'iphone'
+        }
+        return ret
     }
     //% block='use %app% how default menssage app'
     export function MSGDefaultApp(app: MSGApp) {
