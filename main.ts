@@ -1,5 +1,5 @@
 namespace SOmobile {
-    let sfw
+    let sfw: string
     export enum OSV {
         //% block='android 5'
         AndroidFive,
@@ -18,6 +18,10 @@ namespace SOmobile {
     }
     //% block='import software %os%'
     export function exportSO(so: OSV){
-        sfw = so
+        sfw = so.toString()
+    }
+    //% block='software'
+    export function software(){
+        return sfw
     }
 }
