@@ -1,6 +1,7 @@
 namespace SOmobile {
     let sfw: number
     let defaultMSG: string
+    let apps = ['']
     export enum OSV {
         //% block='android 5'
         AndroidFive,
@@ -26,6 +27,13 @@ namespace SOmobile {
     //% block='import software %os%'
     export function exportSO(so: OSV){
         sfw = so
+        if(sfw < 6){
+            apps.push('play store')
+            apps.shift()
+        }else{
+            apps.push('apple store')
+            apps.shift()
+        }
     }
     //% block='software'
     export function software(){
@@ -40,10 +48,19 @@ namespace SOmobile {
     //% block='use %app% how default message app'
     export function MSGDefaultApp(app: MSGApp) {
         defaultMSG = app.toString()
+        if (defaultMSG = '1') {
+            apps.push('MensagePho')
+        } else {
+            apps.push('MicroMSG')
+        }
     }
     //% block='set the wifi force to %number%'
     //% force.min=1 force.max=20
     export function WifiForce(force: number) {
         radio.setGroup(force)
+    }
+    //% block='get app number %position%(start in 0)'
+    export function getApp(position: number){
+        return apps[position]
     }
 }
