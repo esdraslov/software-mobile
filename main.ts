@@ -1,5 +1,6 @@
 namespace SOmobile {
     let sfw: number
+    let defaultMSG: string
     export enum OSV {
         //% block='android 5'
         AndroidFive,
@@ -38,6 +39,11 @@ namespace SOmobile {
     }
     //% block='use %app% how default message app'
     export function MSGDefaultApp(app: MSGApp) {
-        
+        defaultMSG = app.toString()
+    }
+    //% block='set the wifi force to %number%'
+    //% force.min=1 force.max=20
+    export function WifiForce(force: number) {
+        radio.setGroup(force)
     }
 }
