@@ -19,6 +19,7 @@ namespace SOmobile {
         //% block='iphone'
         Iphone
     }
+    //% category='apps'
     export enum MSGApp {
         //% block='MicroMSG(only android)'
         MicroMSG,
@@ -26,6 +27,7 @@ namespace SOmobile {
         MensagePho
     }
     //% block='import software %os%'
+    //% category='software'
     export function exportSO(so: OSV){
         sfw = so
         if(sfw < 6){
@@ -37,6 +39,7 @@ namespace SOmobile {
         }
     }
     //% block='software'
+    //% category='software'
     export function software(){
         let ret: string
         if(sfw < 6){
@@ -47,6 +50,7 @@ namespace SOmobile {
         return ret
     }
     //% block='use %app% how default message app'
+    //% category='apps'
     export function MSGDefaultApp(app: MSGApp) {
         defaultMSG = app.toString()
         if (defaultMSG = '1') {
@@ -57,11 +61,13 @@ namespace SOmobile {
     }
     //% block='set the wifi force to %number%'
     //% force.min=1 force.max=20
+    //% category='wi-fi'
     export function WifiForce(force: number) {
         radio.setGroup(force)
     }
     //% block='get app number %position% (start in 0)'
     //% position.min=1 position.max=10000 position.default=1
+    //% category='apps'
     export function getApp(position: number){
         return apps[position-1]
     }
