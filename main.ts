@@ -1,3 +1,4 @@
+//% color='#6699ff'
 namespace SOmobile {
     let sfw: number
     let defaultMSG: string
@@ -60,7 +61,7 @@ namespace SOmobile {
         radio.setGroup(force)
     }
     //% block='get app number %position% (start in 0)'
-    //% position.min=1
+    //% position.min=1 position.max=10000 position.default=1
     export function getApp(position: number){
         return apps[position-1]
     }
