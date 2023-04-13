@@ -1,4 +1,4 @@
-//% color='#6699ff'
+//% color='#cc00ff' icon='📱'
 namespace SOmobile {
     let sfw: number
     let defaultMSG: string
