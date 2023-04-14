@@ -94,6 +94,7 @@ namespace SOmobile {
     }
     //% block='shutdown'
     export function turnOff() {
+        music.startMelody(music.builtInMelody(Melodies.PowerDown), MelodyOptions.Once)
         isLock = true
         isOff = true
     }
