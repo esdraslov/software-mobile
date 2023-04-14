@@ -4,6 +4,7 @@ namespace SOmobile {
     let defaultMSG: string
     let apps = ['']
     let isLock = false
+    let isOff = false
     export enum OSV {
         //% block='android 5'
         AndroidFive,
@@ -86,5 +87,10 @@ namespace SOmobile {
     //% block='scroll down'
     export function srlDown() {
         isLock = false
+    }
+    //% block='shutdown'
+    export function turnOff() {
+        isLock = true
+        isOff = true
     }
 }
