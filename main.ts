@@ -78,4 +78,13 @@ namespace SOmobile {
     export function isLockScreen() {
         return isLock
     }
+    
+    //% block='scroll up'
+    export function srlUp() {
+        isLock = false
+    }
+    //% block='scroll down'
+    export function srlDown() {
+        isLock = false
+    }
 }
