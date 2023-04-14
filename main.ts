@@ -82,11 +82,15 @@ namespace SOmobile {
     
     //% block='scroll up'
     export function srlUp() {
-        isLock = false
+        if(!isOff){
+            isLock = false
+        }
     }
     //% block='scroll down'
     export function srlDown() {
-        isLock = false
+        if(!isOff){
+            isLock = false
+        }
     }
     //% block='shutdown'
     export function turnOff() {
