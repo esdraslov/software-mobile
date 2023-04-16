@@ -130,4 +130,10 @@ namespace SOmobile {
             isOff = false
         }
     }
+    //% block
+    export function generateUpdate(){
+        if(Math.randomBoolean()){
+            update = 'update avaliable'
+        }
+    }
 }
