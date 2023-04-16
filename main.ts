@@ -5,6 +5,7 @@ namespace SOmobile {
     let apps = ['']
     let isLock = false
     let isOff = false
+    let update: string = 'none'
     export enum OSV {
         //% block='android 5'
         AndroidFive,
@@ -97,5 +98,13 @@ namespace SOmobile {
         music.startMelody(music.builtInMelody(Melodies.PowerDown), MelodyOptions.Once)
         isLock = true
         isOff = true
+    }
+    //% block='a update is avaliable?'
+    export function updateAvaliable(){
+        let ret: boolean = false
+        if(update != 'none'){
+            ret = true
+        }
+        return ret
     }
 }
