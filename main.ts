@@ -114,6 +114,20 @@ namespace SOmobile {
             control.waitMicros(randint(1000, 10000))
             update = 'none'
             isOff = false
+        }else if(setOff){
+            isOff = true
+            control.waitMicros(randint(1000, 10000))
+            update = 'none'
+            isOff = false
+        }else if(inSecondPlane){
+            control.waitMicros(randint(1000, 10000))
+            update = 'none'
+        }else{
+            isOff = true
+            basic.showString("updating please wait...")
+            control.waitMicros(randint(1000, 10000))
+            update = 'none'
+            isOff = false
         }
     }
 }
