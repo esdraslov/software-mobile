@@ -107,7 +107,7 @@ namespace SOmobile {
         }
         return ret
     }
-    //% block
+    //% block='setup update ? in second plane: %inSecondPlane and turn off: %setOff'
     export function setupUpdate(inSecondPlane: boolean, setOff: boolean){
         if(inSecondPlane && setOff){
             isOff = true
