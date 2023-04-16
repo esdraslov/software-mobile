@@ -28,6 +28,10 @@ namespace SOmobile {
         //% block='MensagePho(only iphone)'
         MensagePho
     }
+    /*
+    * install a software in your micro:bit
+    * @os - the software, eg: android 5
+    */
     //% block='import software %os%'
     export function exportSO(so: OSV){
         sfw = so
@@ -39,6 +43,9 @@ namespace SOmobile {
             apps.shift()
         }
     }
+    /*
+    * return the software(without the version)
+    */
     //% block='software'
     export function software(){
         let ret: string
@@ -49,6 +56,10 @@ namespace SOmobile {
         }
         return ret
     }
+    /*
+    * install a massage app in your micro:bit
+    * @app - the app, eg: MicroMSG
+    */
     //% block='use %app% how default message app'
     export function MSGDefaultApp(app: MSGApp) {
         defaultMSG = app.toString()
@@ -58,16 +69,27 @@ namespace SOmobile {
             apps.push('MicroMSG')
         }
     }
+    /*
+    * set the wifi force for only recive and send wifi in the force
+    * @force - the force, recomended: use 10, eg: 10
+    */
     //% block='set the wifi force to %number%'
     //% force.min=1 force.max=20
     export function WifiForce(force: number) {
         radio.setGroup(force)
     }
+    /*
+    * install a software in your micro:bit
+    * @position - the app position, eg: 1
+    */
     //% block='get app number %position% (start in 0)'
     //% position.min=1 position.max=10000 position.value=1
     export function getApp(position: number){
         return apps[position-1]
     }
+    /*
+    * lock the screen. nothing for describe
+    */
     //% block='set lock screen to %lock%'
     export function lockScreen(lock: boolean){
         if(lock){
@@ -76,29 +98,43 @@ namespace SOmobile {
             isLock = false
         }
     }
+    /*
+    * nothing to describe too.
+    */
     //% block='the screen is locked?'
     export function isLockScreen() {
         return isLock
     }
-    
+    /*
+    * no describe
+    */
     //% block='scroll up'
     export function srlUp() {
         if(!isOff){
             isLock = false
         }
     }
+    /*
+    * no describe
+    */
     //% block='scroll down'
     export function srlDown() {
         if(!isOff){
             isLock = false
         }
     }
+    /*
+    * no describe
+    */
     //% block='shutdown'
     export function turnOff() {
         music.startMelody(music.builtInMelody(Melodies.PowerDown), MelodyOptions.Once)
         isLock = true
         isOff = true
     }
+    /*
+    * no describe
+    */
     //% block='a update is avaliable?'
     export function updateAvaliable(){
         let ret: boolean = false
@@ -107,6 +143,9 @@ namespace SOmobile {
         }
         return ret
     }
+    /*
+    * no describe
+    */
     //% block='setup update ? in second plane: %inSecondPlane and turn off: %setOff'
     export function setupUpdate(inSecondPlane: boolean, setOff: boolean){
         if(inSecondPlane && setOff){
@@ -130,6 +169,9 @@ namespace SOmobile {
             isOff = false
         }
     }
+    /*
+    * this generate a update randomly
+    */
     //% block
     export function generateUpdate(){
         if(Math.randomBoolean()){
