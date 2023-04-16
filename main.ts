@@ -111,21 +111,21 @@ namespace SOmobile {
     export function setupUpdate(inSecondPlane: boolean, setOff: boolean){
         if(inSecondPlane && setOff){
             isOff = true
-            control.waitMicros(randint(1000, 10000))
+            control.waitMicros(randint(1000, 50000))
             update = 'none'
             isOff = false
         }else if(setOff){
             isOff = true
-            control.waitMicros(randint(1000, 10000))
+            control.waitMicros(randint(1000, 8000))
             update = 'none'
             isOff = false
         }else if(inSecondPlane){
-            control.waitMicros(randint(1000, 10000))
+            control.waitMicros(randint(1000, 40000))
             update = 'none'
         }else{
             isOff = true
             basic.showString("updating please wait...")
-            control.waitMicros(randint(1000, 10000))
+            control.waitMicros(randint(1000, 11000))
             update = 'none'
             isOff = false
         }
