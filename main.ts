@@ -107,4 +107,13 @@ namespace SOmobile {
         }
         return ret
     }
+    //% block
+    export function setupUpdate(inSecondPlane: boolean, setOff: boolean){
+        if(inSecondPlane && setOff){
+            isOff = true
+            control.waitMicros(randint(1000, 10000))
+            update = 'none'
+            isOff = false
+        }
+    }
 }
