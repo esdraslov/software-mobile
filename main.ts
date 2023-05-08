@@ -25,9 +25,9 @@ namespace SOmobile {
         Iphone
     }
     export enum ChargingEvent {
-        //% block
+        //% block='connected'
         Connected,
-        //% block
+        //% block='Desconnected'
         Desconnected
     }
     export enum MSGApp {
@@ -190,11 +190,11 @@ namespace SOmobile {
      * run code on chraging modified
      */
     //% block
-    export function onChargingModifyed(event: ChargingEvent, act: (res: string) => void){
+    export function onChargingModifyed(event: ChargingEvent, act: () => void){
         if(event == 1 && eventC == 1){
-            act('connected')
+            act()
         }else if(event == 0 && eventC == 0){
-            act('unconnected')
+            act()
         }
     }
     radio.onReceivedValue(function(name: string, value: number) {
