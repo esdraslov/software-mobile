@@ -6,6 +6,7 @@ namespace SOmobile {
     let isLock = false
     let isOff = false
     let update: string = 'none'
+
     export enum OSV {
         //% block='android 5'
         AndroidFive,
@@ -177,5 +178,18 @@ namespace SOmobile {
         if(Math.randomBoolean()){
             update = 'update avaliable'
         }
+    }
+}
+
+namespace interfaces {
+    export interface Turn {
+        ernegy: boolean
+    }
+    /**
+     * set the turn(ernegy)
+     */
+    // block
+    export function turn(t: Turn){
+        return t
     }
 }
