@@ -28,7 +28,7 @@ namespace SOmobile {
         //% block='MensagePho(only iphone)'
         MensagePho
     }
-    /*
+    /**
     * install a software in your micro:bit
     * @os - the software, eg: android 5
     */
@@ -43,7 +43,7 @@ namespace SOmobile {
             apps.shift()
         }
     }
-    /*
+    /**
     * return the software(without the version)
     */
     //% block='software'
@@ -56,7 +56,7 @@ namespace SOmobile {
         }
         return ret
     }
-    /*
+    /**
     * install a massage app in your micro:bit
     * @app - the app, eg: MicroMSG
     */
@@ -69,7 +69,7 @@ namespace SOmobile {
             apps.push('MicroMSG')
         }
     }
-    /*
+    /**
     * set the wifi force for only recive and send wifi in the force
     * @force - the force, recomended: use 10, eg: 10
     */
@@ -78,7 +78,7 @@ namespace SOmobile {
     export function WifiForce(force: number) {
         radio.setGroup(force)
     }
-    /*
+    /**
     * install a software in your micro:bit
     * @position - the app position, eg: 1
     */
@@ -87,7 +87,7 @@ namespace SOmobile {
     export function getApp(position: number){
         return apps[position-1]
     }
-    /*
+    /**
     * lock the screen. nothing for describe
     */
     //% block='set lock screen to %lock%'
@@ -98,14 +98,14 @@ namespace SOmobile {
             isLock = false
         }
     }
-    /*
+    /**
     * nothing to describe too.
     */
     //% block='the screen is locked?'
     export function isLockScreen() {
         return isLock
     }
-    /*
+    /**
     * no describe
     */
     //% block='scroll up'
@@ -114,7 +114,7 @@ namespace SOmobile {
             isLock = false
         }
     }
-    /*
+    /**
     * no describe
     */
     //% block='scroll down'
@@ -123,7 +123,7 @@ namespace SOmobile {
             isLock = false
         }
     }
-    /*
+    /**
     * no describe
     */
     //% block='shutdown'
@@ -132,7 +132,7 @@ namespace SOmobile {
         isLock = true
         isOff = true
     }
-    /*
+    /**
     * no describe
     */
     //% block='a update is avaliable?'
@@ -143,7 +143,7 @@ namespace SOmobile {
         }
         return ret
     }
-    /*
+    /**
     * no describe
     */
     //% block='setup update ? in second plane: %inSecondPlane and turn off: %setOff'
@@ -169,7 +169,7 @@ namespace SOmobile {
             isOff = false
         }
     }
-    /*
+    /**
     * this generate a update randomly
     */
     //% block
