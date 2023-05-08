@@ -200,7 +200,7 @@ namespace SOmobile {
     /**
      * run code on chraging modified
      */
-    //% block='on charging modified %act%'
+    //% block
     export function onChargingFullModifyed(act: (ev: string) => void) {
         if (eventC == 1) {
             act('desconnected')
