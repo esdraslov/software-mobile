@@ -6,6 +6,7 @@ namespace SOmobile {
     let isLock = false
     let isOff = false
     let update: string = 'none'
+    let eventC = 1
 
     export enum OSV {
         //% block='android 5'
@@ -22,6 +23,12 @@ namespace SOmobile {
         AndroidEight,
         //% block='iphone'
         Iphone
+    }
+    export enum ChargingEvent {
+        //% block
+        Connected,
+        //% block
+        Desconnected
     }
     export enum MSGApp {
         //% block='MicroMSG(only android)'
@@ -179,6 +186,22 @@ namespace SOmobile {
             update = 'update avaliable'
         }
     }
+    /**
+     * run code on chraging modified
+     */
+    //% block
+    export function onChargingModifyed(event: ChargingEvent, act: (res: string) => void){
+        if(event == 1 && eventC == 1){
+            act('connected')
+        }else if(event == 0 && eventC == 0){
+            act('unconnected')
+        }
+    }
+    radio.onReceivedValue(function(name: string, value: number) {
+        if(name == 'event.Charging'){
+            eventC = value
+        }
+    })
 }
 
 namespace interfaces {
