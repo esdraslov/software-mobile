@@ -38,7 +38,7 @@ namespace SOmobile {
     }
     /**
     * install a software in your micro:bit
-    * @os - the software, eg: android 5
+    * @param - the software, eg: android 5
     */
     //% block='import software %os%'
     export function exportSO(so: OSV){
@@ -66,7 +66,7 @@ namespace SOmobile {
     }
     /**
     * install a massage app in your micro:bit
-    * @app - the app, eg: MicroMSG
+    * @param - the app, eg: MicroMSG
     */
     //% block='use %app% how default message app'
     export function MSGDefaultApp(app: MSGApp) {
@@ -197,6 +197,17 @@ namespace SOmobile {
             act()
         }
     }
+    /**
+     * run code on chraging modified
+     */
+    //% block='on charging modified %act%
+    export function onChargingFullModifyed(act: (ev: string) => void) {
+        if (eventC == 1) {
+            act('desconnected')
+        } else if (eventC == 0) {
+            act('connected')
+        }
+    }
     radio.onReceivedValue(function(name: string, value: number) {
         if(name == 'event.Charging'){
             eventC = value
@@ -210,6 +221,7 @@ namespace interfaces {
     }
     /**
      * set the turn(ernegy)
+     * @param - the turn
      */
     // block
     export function turn(t: Turn){
