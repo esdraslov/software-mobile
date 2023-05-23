@@ -191,21 +191,26 @@ namespace SOmobile {
      */
     //% block
     export function onChargingModifyed(event: ChargingEvent, act: () => void){
-        if(event == 1 && eventC == 1){
-            act()
-        }else if(event == 0 && eventC == 0){
-            act()
+        while(true){
+            if(event == 1 && eventC == 1){
+                act()
+            }else if(event == 0 && eventC == 0){
+                act()
+            }
         }
+        
     }
     /**
      * run code on chraging modified
      */
     //% block
     export function onChargingFullModifyed(act: (ev: string) => void) {
-        if (eventC == 1) {
-            act('desconnected')
-        } else if (eventC == 0) {
-            act('connected')
+        while(true){
+            if (eventC == 1) {
+                act('desconnected')
+            } else if (eventC == 0) {
+                act('connected')
+            }
         }
     }
     radio.onReceivedValue(function(name: string, value: number) {
