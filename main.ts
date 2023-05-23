@@ -38,7 +38,7 @@ namespace SOmobile {
     }
     /**
     * install a software in your micro:bit
-    * @param - the software, eg: android 5
+    * @param so the software, eg: android 5
     */
     //% block='import software %os%'
     export function exportSO(so: OSV){
@@ -66,7 +66,7 @@ namespace SOmobile {
     }
     /**
     * install a massage app in your micro:bit
-    * @param - the app, eg: MicroMSG
+    * @param app the app, eg: MicroMSG
     */
     //% block='use %app% how default message app'
     export function MSGDefaultApp(app: MSGApp) {
@@ -79,7 +79,7 @@ namespace SOmobile {
     }
     /**
     * set the wifi force for only recive and send wifi in the force
-    * @force - the force, recomended: use 10, eg: 10
+    * @param force the force, recomended: use 10, eg: 10
     */
     //% block='set the wifi force to %number%'
     //% force.min=1 force.max=20
@@ -88,7 +88,7 @@ namespace SOmobile {
     }
     /**
     * install a software in your micro:bit
-    * @position - the app position, eg: 1
+    * @param position the app position, eg: 1
     */
     //% block='get app number %position% (start in 0)'
     //% position.min=1 position.max=10000 position.value=1
@@ -226,7 +226,7 @@ namespace interfaces {
     }
     /**
      * set the turn(ernegy)
-     * @param - the turn
+     * @param t the turn
      */
     // block
     export function turn(t: Turn){
