@@ -236,6 +236,7 @@ namespace SOmobile {
     })
 }
 
+//% advanced=true
 namespace interfaces {
     export interface Turn {
         ernegy: boolean
