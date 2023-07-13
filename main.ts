@@ -1,4 +1,5 @@
 //% color='#cc00ff'
+//% groups=["wifi", "os", "apps", "other"]
 namespace SOmobile {
     let sfw: number
     let defaultMSG: string
@@ -41,6 +42,7 @@ namespace SOmobile {
     * @param so the software, eg: android 5
     */
     //% block='import software %os%'
+    //% group="os"
     export function exportSO(so: OSV){
         sfw = so
         if(sfw < 6){
@@ -55,6 +57,7 @@ namespace SOmobile {
     * return the software(without the version)
     */
     //% block='software'
+    //% group="os"
     export function software(){
         let ret: string
         if(sfw < 6){
@@ -69,6 +72,7 @@ namespace SOmobile {
     * @param app the app, eg: MicroMSG
     */
     //% block='use %app% how default message app'
+    //% group="apps"
     export function MSGDefaultApp(app: MSGApp) {
         defaultMSG = app.toString()
         if (defaultMSG = '1') {
@@ -83,6 +87,7 @@ namespace SOmobile {
     */
     //% block='set the wifi force to %number%'
     //% force.min=1 force.max=20
+    //% group="wifi"
     export function WifiForce(force: number) {
         radio.setGroup(force)
     }
@@ -92,6 +97,7 @@ namespace SOmobile {
     */
     //% block='get app number %position% (start in 0)'
     //% position.min=1 position.max=10000 position.value=1
+    //% group="apps"
     export function getApp(position: number){
         return apps[position-1]
     }
@@ -99,6 +105,7 @@ namespace SOmobile {
     * lock the screen. nothing for describe
     */
     //% block='set lock screen to %lock%'
+    //% group="screen"
     export function lockScreen(lock: boolean){
         if(lock){
             isLock = true
@@ -110,6 +117,7 @@ namespace SOmobile {
     * nothing to describe too.
     */
     //% block='the screen is locked?'
+    //% group="screen"
     export function isLockScreen() {
         return isLock
     }
