@@ -125,6 +125,7 @@ namespace SOmobile {
     * no describe
     */
     //% block='scroll up'
+    //% group="screen"
     export function srlUp() {
         if(!isOff){
             isLock = false
@@ -134,6 +135,7 @@ namespace SOmobile {
     * no describe
     */
     //% block='scroll down'
+    //% group="screen"
     export function srlDown() {
         if(!isOff){
             isLock = false
@@ -143,6 +145,7 @@ namespace SOmobile {
     * no describe
     */
     //% block='shutdown'
+    //% group="os"
     export function turnOff() {
         music.startMelody(music.builtInMelody(Melodies.PowerDown), MelodyOptions.Once)
         isLock = true
@@ -152,6 +155,7 @@ namespace SOmobile {
     * no describe
     */
     //% block='a update is avaliable?'
+    //% group="os"
     export function updateAvaliable(){
         let ret: boolean = false
         if(update != 'none'){
@@ -163,6 +167,7 @@ namespace SOmobile {
     * no describe
     */
     //% block='setup update ? in second plane: %inSecondPlane and turn off: %setOff'
+    //% group="os"
     export function setupUpdate(inSecondPlane: boolean, setOff: boolean){
         if(inSecondPlane && setOff){
             isOff = true
@@ -189,6 +194,7 @@ namespace SOmobile {
     * this generate a update randomly
     */
     //% block
+    //% group="os"
     export function generateUpdate(){
         if(Math.randomBoolean()){
             update = 'update avaliable'
@@ -198,6 +204,7 @@ namespace SOmobile {
      * run code on chraging modified
      */
     //% block
+    //% group="os"
     export function onChargingModifyed(event: ChargingEvent, act: () => void){
         while(true){
             if(event == 1 && eventC == 1){
@@ -212,6 +219,7 @@ namespace SOmobile {
      * run code on chraging modified
      */
     //% block
+    //% group="screen"
     export function onChargingFullModifyed(act: (ev: string) => void) {
         while(true){
             if (eventC == 1) {
@@ -236,7 +244,7 @@ namespace interfaces {
      * set the turn(ernegy)
      * @param t the turn
      */
-    // block
+    //% block
     export function turn(t: Turn){
         return t
     }
