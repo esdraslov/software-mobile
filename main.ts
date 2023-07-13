@@ -1,5 +1,5 @@
 //% color='#cc00ff'
-//% groups=["wifi", "os", "apps", "other"]
+//% groups=["wifi", "os", "apps", "screen", "audio"]
 namespace SOmobile {
     let sfw: number
     let defaultMSG: string
@@ -234,6 +234,34 @@ namespace SOmobile {
             eventC = value
         }
     })
+    /**
+     * audio recorder
+     */
+    //% block="create a audio recorder"
+    //% group="audio"
+    export class audioRecoder {
+        _recordMaxMS = 3000
+
+        constructor (){}
+
+        /**
+         * record a audio until 3 seconds
+         */
+        //% block
+        //% group="audio"
+        startRecord(): void {
+            record.startRecording(record.BlockingState.Blocking)
+        }
+        
+        /**
+         * play the last audio recorded
+         */
+        //% block
+        //% group="audio"
+        playAudio(): void {
+            record.playAudio(record.BlockingState.Blocking)
+        }
+    }
 }
 
 //% advanced=true
