@@ -263,6 +263,11 @@ namespace SOmobile {
         }
     }
 
+    /**
+     * create a audio Recoder
+     */
+    //% block="create a audio recorder"
+    //% group="audio"
     export function MAR() {
         return new audioRecoder()
     }
