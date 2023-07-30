@@ -237,7 +237,7 @@ namespace SOmobile {
     /**
      * audio recorder
      */
-    //% block="create a audio recorder"
+    //% block="audio recorder"
     //% group="audio"
     export class audioRecoder {
         _recordMaxMS = 3000
@@ -261,6 +261,10 @@ namespace SOmobile {
         playAudio(): void {
             record.playAudio(record.BlockingState.Blocking)
         }
+    }
+
+    export function MAR() {
+        return new audioRecoder()
     }
 }
 
