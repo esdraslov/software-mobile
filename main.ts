@@ -75,7 +75,7 @@ namespace SOmobile {
     //% group="apps"
     export function MSGDefaultApp(app: MSGApp) {
         defaultMSG = app.toString()
-        if (defaultMSG = '1') {
+        if (defaultMSG == '1') {
             apps.push('MensagePho')
         } else {
             apps.push('MicroMSG')
@@ -168,7 +168,7 @@ namespace SOmobile {
     */
     //% block='setup update ? in second plane: %inSecondPlane and turn off: %setOff'
     //% group="os"
-    export function setupUpdate(inSecondPlane: boolean, setOff: boolean){
+    export function setupUpdate(inSecondPlane: boolean = false, setOff: boolean = true){
         if(inSecondPlane && setOff){
             isOff = true
             control.waitMicros(randint(1000, 50000))
@@ -206,13 +206,13 @@ namespace SOmobile {
     //% block
     //% group="os"
     export function onChargingModifyed(event: ChargingEvent, act: () => void){
-        while(true){
+        basic.forever(() => {
             if(event == 1 && eventC == 1){
                 act()
-            }else if(event == 0 && eventC == 0){
+            }else if(event == 1 && eventC == 0){
                 act()
             }
-        }
+        })
         
     }
     /**
@@ -221,13 +221,13 @@ namespace SOmobile {
     //% block
     //% group="screen"
     export function onChargingFullModifyed(act: (ev: string) => void) {
-        while(true){
+        basic.forever(() =>{
             if (eventC == 1) {
                 act('desconnected')
             } else if (eventC == 0) {
                 act('connected')
             }
-        }
+        })
     }
     radio.onReceivedValue(function(name: string, value: number) {
         if(name == 'event.Charging'){
@@ -285,5 +285,14 @@ namespace interfaces {
     //% block
     export function turn(t: Turn){
         return t
+    }
+
+    /**
+     * transform parameters to turn(ernegy)
+     * @param ernegy boolean value; ernegy
+     */
+    //% block
+    export function toTurn(ernegy: boolean){
+        return turn({ernegy: ernegy})
     }
 }
